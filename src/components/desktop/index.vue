@@ -1,6 +1,6 @@
 <template>
   <div id="desktop-wrap">
-    <grid-layout
+    <!-- <grid-layout
       :layout.sync="layout"
       :col-num="12"
       :row-height="30"
@@ -24,19 +24,18 @@
       >
         {{ item.i }}
       </grid-item>
-    </grid-layout>
+    </grid-layout> -->
   </div>
 </template>
 
 <script>
-import VueGridLayout from "vue-grid-layout";
-console.log(VueGridLayout.GridLayout, VueGridLayout.GridItem);
+// import VueGridLayout from "vue-grid-layout";
 
 export default {
   name: "DeskTop",
   components: {
-    GridLayout: VueGridLayout.GridLayout,
-    GridItem: VueGridLayout.GridItem,
+    // GridLayout: VueGridLayout.GridLayout,
+    // GridItem: VueGridLayout.GridItem,
   },
   data() {
     return {

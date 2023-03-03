@@ -2,7 +2,6 @@
   <div id="app">
     <task-bar />
     <desk-top />
-    <dock-bar />
   </div>
 </template>
 
