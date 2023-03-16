@@ -1,20 +1,23 @@
 <template>
-  <div class="search-wrap" ref="wrap">
+  <div class="control-wrap" ref="wrap">
     <div
-      class="search-icon"
+      class="control-icon"
       :class="{ on: isActive }"
       @click="isActive = !isActive"
     >
       <box-icon
-        name="search"
+        type="solid"
+        name="user-circle"
         :color="isActive ? '#00a1d6' : '#fff'"
         size="17px"
       ></box-icon>
     </div>
-    <div class="search-popper" :class="{ on: isActive }" ref="popper">
+    <div class="control-popper" :class="{ on: isActive }" ref="popper">
       <div class="popper-wrap">
-        <input placeholder="搜索..." />
-        <button>搜索</button>
+        <div class="list-item" v-for="(item, index) in itemList" :key="index">
+          <box-icon :name="item.iconName" size="18px"></box-icon>
+          <span>{{ item.label }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -27,31 +30,30 @@ export default {
   data() {
     return {
       isActive: false,
+      itemList: [
+        { iconName: "cog", label: "设置" },
+        { iconName: "power-off", label: "锁屏" },
+      ],
     };
   },
   mounted() {
     const wrap = this.$refs.wrap;
     const popper = this.$refs.popper;
     createPopper(wrap, popper, {
-      placement: "bottom-end",
+      placement: "bottom-start",
     });
-  },
-  methods: {
-    search() {
-      console.log("搜索");
-    },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.search-wrap {
+.control-wrap {
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  .search-icon {
+  .control-icon {
     height: 100%;
     padding: 0 8px;
     display: flex;
@@ -66,9 +68,8 @@ export default {
       background-color: rgba(255, 255, 255, 0.16);
     }
   }
-  .search-popper {
-    width: 320px;
-    height: 56px;
+  .control-popper {
+    width: 140px;
     padding-top: 8px;
     opacity: 0;
     z-index: -100;
@@ -81,38 +82,30 @@ export default {
     }
     .popper-wrap {
       width: 100%;
-      height: 100%;
-      padding: 0px 8px;
       border-radius: 4px;
-      background-color: rgba(255, 255, 255, 0.88);
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      input {
-        height: 32px;
-        flex: 1;
-        outline: none;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        padding: 0 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #000;
-      }
-      button {
-        height: 32px;
-        border-radius: 4px;
-        padding: 0 24px;
-        background-color: rgba(0, 0, 0, 0.88);
-        color: #fff;
-        outline: none;
-        border: none;
-        transition: background-color 0.3s ease-in-out;
+      .list-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 8px 16px;
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.88);
         cursor: pointer;
         &:hover {
-          background-color: #00a1d6;
+          background-color: rgba(0, 161, 214, 0.88);
+          color: #fff;
+          box-icon {
+            fill: #fff;
+          }
         }
       }
     }
