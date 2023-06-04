@@ -28,9 +28,9 @@ export default {
     top: 0;
     height: 100%;
     width: 100%;
-    background-image: url("./assets/bg.jpeg");
+    background-image: url("./assets/bg.jpg");
     background-size: cover;
-    filter: blur(2px);
+    // filter: blur(2px);
     scale: 1.01;
     z-index: -1;
   }
