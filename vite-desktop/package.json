@@ -1,0 +1,25 @@
+{
+  "name": "vite-desktop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@floating-ui/vue": "^1.0.6",
+    "axios": "^1.6.5",
+    "dayjs": "^1.11.10",
+    "fast-glob": "^3.3.2",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.4",
+    "vite": "^5.0.8",
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
+}
