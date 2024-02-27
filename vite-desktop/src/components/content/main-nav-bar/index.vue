@@ -5,7 +5,7 @@ import Setting from "./setting.vue";
 </script>
 
 <template>
-  <div class="wk-nav-bar-wrap">
+  <div class="main-nav-bar-wrap">
     <Bar>
       <template #menu>
         <Setting />
@@ -18,7 +18,7 @@ import Setting from "./setting.vue";
 </template>
 
 <style lang="less" scoped>
-.wk-nav-bar-wrap {
+.main-nav-bar-wrap {
   width: 100%;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.52);

@@ -79,8 +79,10 @@ let menuClick = (cb: Function): void => {
 </template>
 
 <style lang="less" scoped>
-@bg-color: rgba(255, 255, 255, 0.4);
-@bg-color-hover: rgba(0, 0, 0, 0.4);
+@bg-color: #fefefe;
+@menu-text-color: #233;
+@menu-text-active-color: #fff;
+@bg-color-active: #00a1d6;
 
 .floating:not(:empty) {
   margin-top: 20px;
@@ -88,6 +90,7 @@ let menuClick = (cb: Function): void => {
   border-radius: 4px;
   padding: 8px;
   position: relative;
+  z-index: 2;
   &::before {
     content: "";
     position: absolute;
@@ -110,11 +113,14 @@ let menuClick = (cb: Function): void => {
       cursor: pointer;
       font-weight: 500;
       font-size: 16px;
+      color: @menu-text-color;
+      transition: color 0.15s, background-color 0.15s;
       &:not(:first-child) {
         margin-top: 4px;
       }
       &:hover {
-        background-color: @bg-color-hover;
+        color: @menu-text-active-color;
+        background-color: @bg-color-active;
       }
     }
   }
