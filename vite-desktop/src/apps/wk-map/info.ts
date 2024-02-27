@@ -1,8 +1,12 @@
+import icon from "./assets/icons/logo.png";
+import window from "./window.vue";
+
 export default {
-  name: "amap",
-  label: "高德地图",
+  id: "wk-map",
+  name: "wk-map",
+  label: "地图",
+  desc: "地图应用",
   version: "0.0.1",
-  icon: require("./assets/amap-logo.png"),
-  size: [60, 60],
-  type: "icon", // icon、card
+  icon,
+  window,
 };

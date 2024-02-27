@@ -1,15 +1,23 @@
 <script setup lang="ts">
-// import { reactive, shallowRef } from "vue";
-// import cmps from "./apps";
-// const apps = Object.values(cmps);
-// const firstApp = shallowRef(apps[0]);
+import { nextTick } from "vue";
+import EventBus from "@/utils/event-bus.js";
+import MainNavBar from "./components/content/main-nav-bar/index.vue";
+import MainDseskTop from "./components/content/main-desk-top/index.vue";
 
-import NavBar from "./components/content/wk-nav-bar/index.vue";
+const onResize = () => {
+  EventBus.emit("onResize", {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+};
+window.addEventListener("resize", () => {
+  nextTick(() => onResize());
+});
 </script>
 
 <template>
-  <!-- <component v-if="firstApp" :is="firstApp" /> -->
-  <NavBar />
+  <MainNavBar />
+  <MainDseskTop />
 </template>
 
 <style lang="less" scoped></style>
