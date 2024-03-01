@@ -124,6 +124,7 @@ EventBus.on("onResize", () => {
           </grid-item>
         </template>
       </grid-layout>
+      <slot name="desktop"></slot>
     </div>
   </div>
 </template>
@@ -131,6 +132,7 @@ EventBus.on("onResize", () => {
 <style lang="less" scoped>
 .desktop-wrap {
   padding: 12px 0;
+  position: relative;
   .desktop-content {
     width: calc(var(--width) * 1px);
     height: calc(var(--height) * 1px);
