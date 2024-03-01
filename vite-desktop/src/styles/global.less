@@ -17,6 +17,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: HarmonyOS_Sans_Regular;
 }
 
 a {
@@ -58,8 +59,7 @@ li {
     --p1: 0%;
     --p2: 100%;
     --p3: 0.5%;
-    --blend-one: screen, color-dodge, color-burn, screen, overlay, difference,
-      color-dodge;
+    --blend-one: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge;
     --blend-two: screen, color-dodge, color-burn, screen, overlay, difference;
     --no-blend: inherit;
     --c1: #0a9157;
@@ -83,20 +83,11 @@ li {
     --c19: #63b5fb;
     --c20: #c49b71;
 
-    background: linear-gradient(
-        var(--d1),
-        var(--c1) var(--p1),
-        var(--c11) var(--d8)
-      ),
+    background: linear-gradient(var(--d1), var(--c1) var(--p1), var(--c11) var(--d8)),
       linear-gradient(var(--d2), var(--c2) var(--p1), var(--c12) var(--p2)),
       linear-gradient(var(--d3), var(--c3) var(--p1), var(--c13) var(--p2)),
       linear-gradient(var(--d3), var(--c4) var(--p1), var(--c14) var(--p2)),
-      linear-gradient(
-        var(--d4),
-        var(--c5) var(--p1),
-        var(--c15) var(--p3),
-        var(--c17) var(--p2)
-      ),
+      linear-gradient(var(--d4), var(--c5) var(--p1), var(--c15) var(--p3), var(--c17) var(--p2)),
       linear-gradient(var(--d5), var(--c6) var(--p1), var(--c16) var(--p2)),
       linear-gradient(var(--d6), var(--c7) var(--p1), var(--c10) var(--p2)),
       radial-gradient(var(--d7), var(--c8) var(--p1), var(--c9) var(--p2));
